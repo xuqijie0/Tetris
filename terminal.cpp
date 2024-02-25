@@ -27,3 +27,13 @@ void tc::reset_color()
 {
     std::cout << CSI << "0m";
 }
+
+void tc::hide_cursor()
+{
+    std::cout << CSI << "?25l";
+}
+
+void tc::show_cursor()
+{
+    std::cout << CSI << "?25h";
+}

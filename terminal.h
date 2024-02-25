@@ -4,4 +4,6 @@ namespace tc{// terminal contral
     void set_back_color(int id);        //  设置背景颜色
     void clean_screen();    
     void reset_color();
+    void hide_cursor();
+    void show_cursor();
 }
