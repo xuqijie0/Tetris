@@ -3,22 +3,30 @@
 #include <thread>
 
 #include "DemoFunction.h"
+#include "draw.h"
 #include "terminal.h"
 #include "utils.h"
 
 using namespace std::chrono_literals;
 
-void init() { tc::hide_cursor(); }
+void init() {
+  tc::clean_screen();
+  tc::hide_cursor();
+  dw::window(1, 1, 9, 6, "Hold");
+  dw::window(1, 10, 12, 22, "Tetriz");
+  dw::window(7, 1, 9, 16, "Status");
+  dw::window(19, 22, 8, 4, "Info");
+  dw::window(1, 22, 8, 18, "Next");
+}
 
 void loop() {
   int i = 0;
   while (true) {
-    tc::clean_screen();
-    tc::move_to(1, 1);
+    tc::move_to(10, 4);
     std::cout << "FPS:" << ut::fps();
     tc::set_back_color(15);
-    tc::move_to((i++ % 20) + 1, 10);
-    std::cout << (i - 1) % 20 << " ";
+    tc::move_to(10, 10);
+    std::cout << "  ";
     tc::reset_color();
     std::cout << std::flush;
 
