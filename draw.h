@@ -12,5 +12,5 @@ ut: utils
 */
 
 namespace dw {
-void window(int top, int left, int height, std::string title);
+void window(int top, int left, int width, int height, std::string title);
 }
